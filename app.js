@@ -9,11 +9,13 @@ const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("Connected to MongoDB successfully"))
-  .catch(err => console.log(err));
+    .connect(db, { useNewUrlParser: true })
+    .then(() => console.log("Connected to MongoDB successfully"))
+    .catch(err => console.log(err));
 
-app.get("/", (req, res) => res.send("Hello!!"));
+app.get("/", (req, res) => {
+    res.send("Hello World!!");
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
